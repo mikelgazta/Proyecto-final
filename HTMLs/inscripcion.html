@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="inscripcion.css">
+    <title>Inscripcion</title>
+</head>
+
+<body>
+    <menu>
+        <details>
+            <summary></summary>
+            <nav class="menu">
+                <a href="index.html">PÁGINA PRINCIPAL</a>
+                <a href="">SOBRE NOSOTROS</a>
+                <a href="">TITULACIÓN</a>
+                <a href="">NORMATIVA COVID-19</a>
+                <a href="">EXAMENES OFICIALES</a>
+                <a href="">CONTACTO</a>
+                <a href="inscripcion.html">REGISTRATE</a>
+            </nav>
+        </details>
+        <div class="titulo">
+            <h1>Formulario de inscripción.</h1>
+            <h2>Rellena tus datos para apuntarte a nuestros cursos.</h2><br>
+        </div>
+    </menu>
+
+    <div class="formulario">
+        <form>
+            <label>
+                <p>Elige el idioma que deseas aprender.</p>
+            </label><br><br>
+            <select name="idioma">
+                <option value="Español">Español</option>
+                <option value="Aleman">Aleman</option>
+                <option value="Italiano">Italiano</option>
+                <option value="Frances">Frances</option>
+            </select>
+            <br><br>
+            <input type="text" name="DNI" id="DNI" placeholder="Ingrese su DNI"><br><br>
+            <input type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre"><br><br>
+            <input type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido"><br><br>
+            <input type="tel" name="Telefono" id="Telefono" placeholder="Ingrese su Telefono"><br><br>
+            <input type="text" name="Direccion" id="Direccion" placeholder="Ingrese su Direccion"><br><br>
+            <input type="email" name="correo" id="correo" placeholder="Ingrese su Correo"><br><br>
+        </form>
+        <div class="info">
+            Para más información no dudes en llamarnos al 666-666-666.<br><br>
+            <div class="boton">
+                <input type="button" onclick="alert('Se ha confirmado tu solicitud')" value="Finalizar inscripción"
+                    id="fin">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
