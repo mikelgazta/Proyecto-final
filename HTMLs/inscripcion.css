@@ -1,5 +1,6 @@
 * {
     margin: 0%;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 body {
@@ -164,7 +165,8 @@ form {
     background: #e6e6e6;
     border-radius: 8px;
     box-shadow: 0 0 40px -10px #000;
-    margin: 20px 20px 10%;
+    margin: 20px 20px 50px;
+    height: 50vh;
 }
 
 select {
@@ -186,7 +188,7 @@ select {
 
 input {
     width: 80%;
-    margin: 2% 0% 2% 5%;
+    margin: 2% 0% 2% 2%;
     padding-left: 10px;
     padding-top: 5px;
     box-sizing: border-box;
@@ -200,9 +202,9 @@ input {
 
 .boton {
     display: flex;
-    padding: 6px 6px 6px 6px;
+    padding: 6px 0px 6px 6px;
     align-items: center;
+    justify-content: center;
     margin-bottom: 10%;
     margin-top: 10%;
-    width: max-content;
 }

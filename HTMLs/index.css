@@ -1,9 +1,10 @@
 *{
     margin: 0%;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 body {
-    background-color: var(--primColor);
+    background-color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     height: 100%;
@@ -12,7 +13,7 @@ body {
 }
 
 :root {
-    --primColor: #dcdcdc;
+    --primColor: #cacaca;
     --secoColor: #555555;
     --cornerRad: 4px;
 }
@@ -94,7 +95,7 @@ details[open] summary::after {
 .menu a {
     padding: 8px 20px;
     margin: 0 16px;
-    color: var(--secoColor);
+    color: #24a88e;
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     text-decoration: none;
     text-align: center;
@@ -185,6 +186,31 @@ main{
 
 h1{
     font-size: 80px;
-    font-family: 'Courier New', Courier, monospace;
 }
 
+.descripcion{
+    font-size: larger;
+    color: #24a88e;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.mid{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: darkgrey;
+}
+
+#estudiantes{
+    width: 600px;
+}
+
+.imagen2{
+    width: 100%;
+}
