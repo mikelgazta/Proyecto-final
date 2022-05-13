@@ -7,38 +7,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="inscripcion.css">
     <title>OMJ - Log In</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/solid.js"
+        integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js"
+        integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO"
+        crossorigin="anonymous"></script>
+
 </head>
 
 <body>
     <menu>
-        <details>
-            <summary></summary>
-            <nav class="menu">
-                <a href="index.html">PÁGINA PRINCIPAL</a>
-                <a href="aboutus.html">SOBRE NOSOTROS</a>
-                <a href="">TITULACIÓN</a>
-                <a href="covid.html">NORMATIVA COVID-19</a>
-                <a href="">EXAMENES OFICIALES</a>
-                <a href="inscripcion.html">REGISTRATE</a>
-            </nav>
-        </details>
-        <div class="titulo">
-            <h1>Formulario de inscripción.</h1>
-            <h2>Rellena tus datos para apuntarte a nuestros cursos.</h2><br>
-        </div>
+        <nav>
+        <ul class="main">
+            <li>
+                <a href="index.html"><i class="fas fa-house-user"></i>   Index</a>
+            </li>
+            <li>
+                <a href="cursos.html"><i class="fas fa-book"></i>  Cursos</a>
+                <ul class="drop menu2">
+                    <li><a href="ingles.html">Ingles</a></li>
+                    <li><a href="aleman.html">Aleman</a></li>
+                    <li><a href="italiano.html">Italiano</a></li>
+                    <li><a href="frances.html">Frances</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="covid.html"><i class="fas fa-medkit"></i>  Normativa COVID-19</a>
+            </li>
+            <li>
+                <a href="examenes.html"><i class="fas fa-pencil-alt"></i>  Examenes</a>
+            </li>
+            <li>
+                <a href="aboutus.html"><i class="fas fa-users"></i>  Sobre Nosotros</a>
+            </li>
+            <li>
+                <a href="inscripcion.html"><i class="fas fa-file-signature"></i>  Inscripcion</a>
+            </li>
+        </nav>
     </menu>
+
+    <div class="titulo">
+        <h1>ACADEMIA OMJ</h1>
+    </div>
 
     <div class="formulario">
         <form>
-            <label>
-                <h2>Elige el idioma que deseas aprender.</h2>
-            </label><br><br>
+            <h2>Contacta con Nosotros:</h2>
+            <div class="select">
             <select name="idioma">
+                <option selected disabled>Idioma a aprender:</option>
                 <option value="Ingles">Ingles</option>
                 <option value="Aleman">Aleman</option>
                 <option value="Italiano">Italiano</option>
                 <option value="Frances">Frances</option>
             </select>
+            </div>
             <br><br>
             <input type="text" name="DNI" id="DNI" placeholder="Ingrese su DNI"><br><br>
             <input type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre"><br><br>
@@ -46,14 +70,15 @@
             <input type="tel" name="Telefono" id="Telefono" placeholder="Ingrese su Telefono"><br><br>
             <input type="text" name="Direccion" id="Direccion" placeholder="Ingrese su Direccion"><br><br>
             <input type="email" name="correo" id="correo" placeholder="Ingrese su Correo"><br><br>
-        </form>
-        <div class="info">
-            Para más información no dudes en llamarnos al 666-666-666.<br><br>
-            <div class="boton">
-                <input type="button" onclick="alert('Se ha confirmado tu solicitud')" value="Finalizar inscripción"
-                    id="fin">
+            <div class="info">
+                Para más información no dudes en llamarnos al <br>+34 666-666-666.
+                <div class="boton">
+                    <input type="submit" onclick="alert('Se ha confirmado tu solicitud')" value="Finalizar inscripción"
+                        id="fin">
+                </div>
             </div>
-        </div>
+        </form>
+       
     </div>
 </body>
 
