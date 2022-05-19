@@ -1,3 +1,5 @@
+/*TABLESPACES*/
+
 CREATE TABLESPACE alumnado
 datafile 'alumnado.dbf'
 size 1 M
@@ -16,14 +18,7 @@ size 1 M
 autoextend on next 10 K
 maxsize 1G;
 
-create user administrador identified by administrador
-default tablespace administracion
-temporary tablespace temp
-profile default
-quota 1M on administracion;
-
-grant ALL PRIVILEGES TO administrador;
-
+/*USUARIOS Y PERFILES*/
 create profile admin_sessions LIMIT
     SESSIONS_PER_USER 2
     CPU_PER_SESSION UNLIMITED		
@@ -32,13 +27,13 @@ create profile admin_sessions LIMIT
 	FAILED_LOGIN_ATTEMPTS 3
 	PASSWORD_LOCK_TIME 2;
 
-alter user administrador profile admin_sessions;
-
-create user profesor identified by profesor
-default tablespace profesorado
+create user administrador identified by administrador
+default tablespace administracion
 temporary tablespace temp
-profile default
-quota 1M on profesorado;
+profile admin_sessions
+quota 1M on administracion;
+
+alter user administrador profile admin_sessions;
 
 create profile profe_sessions LIMIT
     SESSIONS_PER_USER UNLIMITED
@@ -48,13 +43,13 @@ create profile profe_sessions LIMIT
 	FAILED_LOGIN_ATTEMPTS 3
 	PASSWORD_LOCK_TIME 2;
 
-alter user profesor profile profe_sessions;
-
-create user alumno identified by alumno
-default tablespace alumnado
+create user profesor identified by profesor
+default tablespace profesorado
 temporary tablespace temp
-profile default
-quota 1M on alumnado;
+profile profe_sessions
+quota 1M on profesorado;
+
+alter user profesor profile profe_sessions;
 
 create profile alumn_sessions LIMIT
     SESSIONS_PER_USER UNLIMITED
@@ -63,6 +58,12 @@ create profile alumn_sessions LIMIT
 	CONNECT_TIME UNLIMITED
 	FAILED_LOGIN_ATTEMPTS 3
 	PASSWORD_LOCK_TIME 2;
+    
+create user alumno identified by alumno
+default tablespace alumnado
+temporary tablespace temp
+profile alumn_sessions
+quota 1M on alumnado;
 
 alter user alumno profile alumn_sessions;
 
@@ -75,6 +76,7 @@ drop table Administradores cascade constraints;
 drop table Profesores cascade constraints;
 drop table Estudiantes cascade constraints;
 drop table Titulo cascade constraints;
+drop table Estudiantes_Titulo cascade constraints;
 */
 
 /*Create tables*/
@@ -122,9 +124,9 @@ create table Estudiantes
 create table Titulo
     (nivel varchar2(10),
     idioma varchar2(20),
-    cuota number (3,2));
+    cuota number (3));
     
-create table Estudiante_Titulo (
+create table Estudiantes_Titulo (
     dniE varchar2 (9),
     nombreE varchar2(20),
     idioma varchar2(20),
@@ -154,7 +156,11 @@ primary key (dniE);
 
 alter table Titulo
 add constraint pk_titulo
-primary key (dniE);
+primary key (nivel, idioma);
+
+alter table Estudiantes_Titulo
+add constraint pk_est_titulo
+primary key (dniE, nivel, idioma);
 
 /*Foreign Keys*/
 
@@ -173,10 +179,32 @@ add constraint fk_est
 foreign key (idUsuario)
 references Usuarios (idUsuario);
 
-/*Grant select*/
+alter table Estudiantes_Titulo
+add constraint fk_est_tit
+foreign key (dniE)
+references Estudiantes (dniE);
 
-grant select on Clase to profesor; 
-grant select on Estudiantes to alumno; 
+alter table Estudiantes_Titulo
+add constraint fk_est_tit2
+foreign key (nivel, idioma)
+references Titulo (nivel, idioma);
+
+/*ROLES*/
+grant ALL PRIVILEGES TO administrador;
+
+create role rol_alumno;
+GRANT SELECT ON "ESTUDIANTES" to rol_alumno;
+grant create session to alumno;
+grant rol_alumno to alumno;
+
+create role rol_profesores;
+GRANT SELECT,INSERT,UPDATE ON "ESTUDIANTES" to rol_profesores;
+grant create session to profesor;
+grant rol_profesores to profesor;
+
+create role rol_profesores2;
+GRANT SELECT ON "PROFESORES" to rol_profesores2;
+grant rol_profesores2 to profesor;
 
 /*Inserts Tabla Usuarios*/
 
@@ -301,8 +329,40 @@ INSERT INTO Estudiantes (dniE, nombreE, apellidos, direccion, telf, idioma, nota
 INSERT INTO Estudiantes (dniE, nombreE, apellidos, direccion, telf, idioma, nota, idUsuario) VALUES 
 ('52120598J', 'Javier', 'Urrutia', 'Plaiaundi BHI Institutua', 943339548, 'Ingles', null, 'IK23');
 
-/*Inserts tabla Titulo
+/*Inserts tabla Titulo*/
+/*INGLES*/
 INSERT INTO Titulo(nivel, idioma, cuota) VALUES
+('B1', 'Ingles', 194);
+INSERT INTO Titulo(nivel, idioma, cuota) VALUES
+('C1', 'Ingles', 211);
+INSERT INTO Titulo(nivel, idioma, cuota) VALUES
+('C2', 'Ingles', 217);
+/*ITALIANO*/
+INSERT INTO Titulo(nivel, idioma, cuota) VALUES
+('B1', 'Italiano', 130);
+INSERT INTO Titulo(nivel, idioma, cuota) VALUES
+('C1', 'Italiano', 186);
+INSERT INTO Titulo(nivel, idioma, cuota) VALUES
+('C2', 'Italiano', 210);
+/*ALEMAN*/
+INSERT INTO Titulo(nivel, idioma, cuota) VALUES
+('A1', 'Aleman', 130);
+INSERT INTO Titulo(nivel, idioma, cuota) VALUES
+('B1', 'Aleman', 174);
+INSERT INTO Titulo(nivel, idioma, cuota) VALUES
+('C2', 'Aleman', 240);
+/*FRANCES*/
+INSERT INTO Titulo(nivel, idioma, cuota) VALUES
+('DELF', 'Frances', 146);
+INSERT INTO Titulo(nivel, idioma, cuota) VALUES
+('DELF Pro', 'Frances', 158);
+INSERT INTO Titulo(nivel, idioma, cuota) VALUES
+('DALF', 'Frances', 198);
+
+/*Inserts tabla Estudiante_Titulo
+
+Todavia no ha empezado el curso por lo que no hay nadie con titulo*/
+
 
 
 
