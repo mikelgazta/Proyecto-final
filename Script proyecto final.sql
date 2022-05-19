@@ -174,10 +174,12 @@ add constraint fk_profe
 foreign key (idUsuario)
 references Usuarios (idUsuario);
 
+/* Problema a la hora de insertar un estudiante sin un id de usuario pre-definido.
 alter table Estudiantes
 add constraint fk_est
 foreign key (idUsuario)
 references Usuarios (idUsuario);
+*/
 
 alter table Estudiantes_Titulo
 add constraint fk_est_tit
