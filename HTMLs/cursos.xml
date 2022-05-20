@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="cursos.xsl"?>
+<cursosH>
+
+    <menu>
+        <nav class="puop">
+        <ul class="main" id="funsionapls">
+            <li>
+                <a href="index.html"><i class="fas fa-house-user"></i>   Index</a>
+            </li>
+            <li>
+                <a href="cursos.xml"><i class="fas fa-book"></i>  Cursos</a>
+                <ul class="drop menu2">
+                    <li><a href="ingles.html">Ingles</a></li>
+                    <li><a href="aleman.html">Aleman</a></li>
+                    <li><a href="italiano.html">Italiano</a></li>
+                    <li><a href="frances.html">Frances</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="covid.html"><i class="fas fa-medkit"></i>  Normativa COVID-19</a>
+            </li>
+            <li>
+                <a href="examenes.html"><i class="fas fa-pencil-alt"></i>  Examenes</a>
+            </li>
+            <li>
+                <a href="aboutus.html" id="aqui"><i class="fas fa-users"></i>  Sobre Nosotros</a>
+            </li>
+            <li>
+                <a href="inscripcion.html"><i class="fas fa-file-signature"></i>  Inscripcion</a>
+            </li>
+        </ul>
+        </nav> 
+    </menu>
+    <menu2>
+        <nav role="navigation">
+            <div id="menuToggle"/>
+              <input type="checkbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+              <ul id="menu">
+                <a href="index.html"><li>Index</li></a>
+                <a href="cursos.html"><li>Cursos</li></a>
+                <a href="ingles.html"><li>Ingles</li></a>
+                <a href="italiano.html"><li>italiano</li></a>
+                <a href="aleman.html"><li>Aleman</li></a>
+                <a href="frances.html"><li>Frances</li></a>
+                <a href="covid.html"><li>COVID-19</li></a>
+                <a href="examenes.html"><li>EXAMENES</li></a>
+                <a href="aboutus.html" id="aqui"><li>Sobre Nosotros</li></a>
+                <a href="inscripcion.html"><li>Inscribete</li></a>
+              </ul>
+          </nav>
+    </menu2>
+
+<curso>
+    <nombre>ACADEMIA OMJ</nombre>
+<titulo>Ingles</titulo>
+<descripcion>Aprende con profesores cualificados a hablar el idioma mas hablado del mundo</descripcion>
+<profesores>Todos los profesores son profesionales preparados para ayudarte en tu proceso de aprendizaje</profesores>+
+
+</curso>
+
+<horario1>
+    <titulo>Horario </titulo>
+    <dia>Lunes - Viernes</dia>
+    <duracion>Clases de 1h</duracion>
+    <hora>16:00-21:00</hora>
+    <dia2>Sabado</dia2>
+    <hora2>10:30 - 12:30 / 16:30 - 19:30</hora2>
+    <dia3>Domingo</dia3>
+    <hora3>CERRADO</hora3>
+</horario1>
+
+<horario2>
+    <titulo>Horario Intensivas</titulo>
+    <dia>Lunes - Viernes</dia>
+    <duracion>Clases de 2h</duracion>
+    <hora>10:00 - 22:00</hora>
+    <dia2>Sabado y Domingo</dia2>
+    <hora2>10:00 - 14:00 / 16:00 - 20:00</hora2>
+</horario2>
+
+<curso1>
+    <titulo>Aleman</titulo>
+    <descripcion>Al aprender un nuevo idioma se te abren un mundo de nuevas posibilidades tanto en el terreno laboral como personal. El conocimiento del aleman en los hispanohablantes es escaso, por lo que las personas que lo dominan son muy valoradas.</descripcion>
+    <profesores>Vas a dejar pasar esta oportunidad? nuestros profesores te ayudaran en todo para que consigas de manera satisfactoria aprender este y otros idiomas</profesores>
+    <imagen ruta="imagenes/bandera%20alemania.jpg"/>
+    
+    </curso1>
+    
+
+
+    <curso2>
+    <titulo>Italiano</titulo>
+    <descripcion>El idioma italiano es uno de los idiomas oficiales de la Union Europea, con lo que aprender italiano te abrira las puertas a muchos organismos internacionales, y tambien la posibilidad de trabajar en diferentes empresas</descripcion>
+    <profesores>No dejes pasar la oportunidad de desarollarte como profesional o estudiante</profesores>
+    <imagen ruta="imagenes/bandera_italia.png"/>
+    
+    </curso2>
+
+<curso3>
+    <titulo>Frances</titulo>
+    <descripcion>El idioma Frances te puede venir muy bien para encontrar trabajo cerca de la frontera, tambien es uno de los idiomas oficiales de la Union Europea, lo cual hara que estudiarlo nunca sea un desperdicio</descripcion>
+    <profesores>No dejes pasar la oportunidad de desarollarte como profesional y estudiante</profesores>
+    <imagen ruta="imagenes/bandera%20francesa.png"/>
+    
+    </curso3>
+    
+
+</cursosH>
