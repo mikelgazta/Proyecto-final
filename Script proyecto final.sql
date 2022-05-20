@@ -365,6 +365,21 @@ INSERT INTO Titulo(nivel, idioma, cuota) VALUES
 
 Todavia no ha empezado el curso por lo que no hay nadie con titulo*/
 
+/*Como estudiante*/
+SELECT * FROM system.estudiantes;
 
+/*Solo como administrador*/
+delete from estudiantes
+where idUsuario = 'IK11';
+
+/*Como profesor*/
+
+/*No se puede hacer*/
+delete from system.estudiantes
+where idUsuario = 'IK12'; 
+
+update system.estudiantes
+set nota = 10
+where (idUsuario ='IK12');
 
 
